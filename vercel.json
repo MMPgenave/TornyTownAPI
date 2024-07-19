@@ -23,7 +23,7 @@
         "VIEW_COMPILED_PATH": "/tmp",
 
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
+        "LOG_CHANNEL": "stack",
         "SESSION_DRIVER": "cookie"
     }
 }
