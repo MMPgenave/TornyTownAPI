@@ -125,6 +125,31 @@ class UserController extends Controller
         }
     }
 
+    // change profile picture by MMP 
+
+
+    public function UpdateAvatar(Request $request)
+    {
+        $request->validate([
+            'Avatar' => 'required|string',
+        ]);
+
+
+        try {
+            $User = $this->User;
+            $User->Avatar = $request->Avatar;
+            $User->save();
+            $Data = [
+                'User' => Auth::guard('api')->user(),
+            ];
+            return Response::Success('Avatar changed successfully' , 200 ,$Data );
+        }catch(\Exception $e){
+            return Response::Failed($e->getMessage() , $e->getCode()  );
+        }
+    }
+
+    // end of changing profile picture
+
     public function CoinHistory()
     {
         $Data = [

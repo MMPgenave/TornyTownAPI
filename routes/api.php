@@ -33,6 +33,8 @@ Route::group(['prefix' => 'V1' ,  'name' => 'V1' , 'as' => 'V1.' , 'middleware' 
             Route::post('UpdatePassword', [\App\Http\Controllers\UserController::class ,'UpdatePassword'])->name('UpdatePassword');
             Route::post('UpdateUserName', [\App\Http\Controllers\UserController::class ,'UpdateUserName'])->name('UpdateUserName');
             Route::post('UpdateEmail', [\App\Http\Controllers\UserController::class ,'UpdateEmail'])->name('UpdateEmail');
+            Route::post('UpdateAvatar', [\App\Http\Controllers\UserController::class ,'UpdateAvatar'])->name('UpdateAvatar');
+
         });
 
         Route::group([ 'prefix' => 'Friends' , 'name' => 'Friends' , 'as' => 'Friends.' , 'middleware' => 'jwt.verify' ] ,function (){
